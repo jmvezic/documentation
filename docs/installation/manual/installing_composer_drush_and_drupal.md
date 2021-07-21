@@ -35,7 +35,7 @@ sudo chmod 775 /opt/drupal
 # Change the ownership of default Apache directory so Composer can access it
 sudo chown -R www-data:www-data /var/www/
 # Clone drupal-project and build it in our newly-created folder.
-git clone https://github.com/drupal-composer/drupal-project
+git clone https://github.com/drupal-composer/drupal-project.git
 cd drupal-project
 # Expect this to take a little while, as this is grabbing the entire
 # requirements set for Drupal.
