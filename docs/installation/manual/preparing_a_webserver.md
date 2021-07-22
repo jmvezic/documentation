@@ -84,7 +84,7 @@ This will install:
 
 ### Configure Postgresql 11 For Use With Drupal
 
-A modification needs to be made to the PostgreSQL configuration in order for Drupal to properly install and function. This change can be made to the main configuration file at `/etc/postgresql/10/main/postgresql.conf`:
+A modification needs to be made to the PostgreSQL configuration in order for Drupal to properly install and function. This change can be made to the main configuration file at `/etc/postgresql/11/main/postgresql.conf`:
 
 **Before**:
 > 558 | #bytea_output = ‘hex’                      # hex, escape 
