@@ -2,11 +2,17 @@
 
 ## In this section, we will install:
 
-- [Fedora 5](https://duraspace.org/fedora/), the back-end repository that Islandora will use
+- [Fedora 6](https://duraspace.org/fedora/), the back-end repository that Islandora will use
 - [Syn](https://github.com/Islandora/Syn), the authentication broker that will manage communication with Fedora
 - [Blazegraph](https://blazegraph.com/), the resource index layer on top of Fedora for managing discoverability via RDF
 
-## Fedora 5
+## Fedora 6
+
+### Stop Tomcat
+
+```bash
+sudo systemctl stop tomcat
+```
 
 ### Creating a Working Space for Fedora
 
@@ -24,7 +30,7 @@ The method for creating the database here will closely mimic the method we used 
 
 ```bash
 sudo -u postgres psql
-create database FEDORA_DB;
+create database FEDORA_DB encoding 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' TEMPLATE template0;
 create user FEDORA_DB_USER with encrypted password 'FEDORA_DB_PASSWORD';
 grant all privileges on database FEDORA_DB to FEDORA_DB_USER;
 \q
@@ -82,10 +88,11 @@ We intend to have Crayfish installed later. Since Fedora needs to be able to rea
 
 `/opt/fcrepo/config/allowed_hosts.txt | tomcat:tomcat/644`
 ```
-http://localhost:CRAYFISH_PORT/
+http://CRAYFISH_HOST:CRAYFISH_PORT/
 ```
+- `CRAYFISH_HOST`: localhost
 - `CRAYFISH_PORT`: 80
-    - This guide will install Crayfish on the same port that Drupal is installed on. This may not be desirable, and if Crayfish is installed on a different port later, that change should be reflected here.
+    - This guide will install Crayfish on the same host and port that Drupal is installed on. This may not be desirable, and if Crayfish is installed on a different host or port later, that change should be reflected here.
 
 The next part of the configuration defines where the pieces of the actual repository will live. Note that this file contains some of the defined `FEDORA_DB` variables from earlier.
 
@@ -233,10 +240,10 @@ We need our Tomcat `JAVA_OPTS` to include references to our repository configura
 `/opt/tomcat/bin/setenv.sh`
 
 **Before**:
-> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -server -Xmx1500m -Xms1000m"
+> 3 | export JAVA_OPTS="-Djava.awt.headless=true -server -Xmx1500m -Xms1000m"
 
 **After**:
-> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"
+> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"
 
 ### Ensuring Tomcat Users Are In Place
 
@@ -263,23 +270,23 @@ While not strictly necessary, we can use the `tomcat-users.xml` file to give us 
 
 ### Downloading and Placing the Latest Release
 
-Fedora `.war` files are packaged up as releases on the official GitHub repository; you can find the latest version at the releases page; the official GitHub repository is labelled as fcrepo4 but does actually contain more recent versions than 4. You should download the most recent stable release.
+Fedora `.war` files are packaged up as releases on the official GitHub repository. You should download the most recent stable release.
 
 ```bash
 sudo wget -O fcrepo.war FCREPO_WAR_URL
 sudo mv fcrepo.war /opt/tomcat/webapps
 sudo chown tomcat:tomcat /opt/tomcat/webapps/fcrepo.war
 ```
-- `FCREPO_WAR_URL`: This can be found at the [fcrepo downloads page](https://github.com/fcrepo4/fcrepo4/releases); the file you're looking for is:
+- `FCREPO_WAR_URL`: This can be found at the [fcrepo downloads page](https://github.com/fcrepo/fcrepo/releases); the file you're looking for is:
     - Tagged in green as the 'Latest release'
-    - The `.war` version of the file
+    - Named "fcrepo-webapp-VERSION.war"
 
-### Restarting the Tomcat Service
+### Start the Tomcat Service
 
-As before, restart the Tomcat service to get Fedora up and running.
+As before, start the Tomcat service to get Fedora up and running.
 
 ```bash
-sudo systemctl restart tomcat
+sudo systemctl start tomcat
 ```
 
 ## Syn
