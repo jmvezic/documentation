@@ -80,7 +80,7 @@ This will install:
 
 - A user at the system level named `postgres`; this will be the only user, by default, that has permission to run the `psql` binary and have access to Postgres configurations
 - A binary executable at `/usr/bin/psql`, which anyone - even `root` - will get kicked out of the moment they run it, since only the `postgres` user has permission to run any Postgres commands
-- A series of configurations that live in `/etc/postgresql/10/main` which can be used to modify how PostgreSQL works.
+- A series of configurations that live in `/etc/postgresql/11/main` which can be used to modify how PostgreSQL works.
 
 ### Configure Postgresql 11 For Use With Drupal
 
