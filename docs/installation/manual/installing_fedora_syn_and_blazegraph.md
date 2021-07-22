@@ -245,7 +245,7 @@ We need our Tomcat `JAVA_OPTS` to include references to our repository configura
 > 3 | export JAVA_OPTS="-Djava.awt.headless=true -server -Xmx1500m -Xms1000m"
 
 **After**:
-> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"
+> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -server -Xmx1500m -Xms1000m"
 
 ### Ensuring Tomcat Users Are In Place
 
