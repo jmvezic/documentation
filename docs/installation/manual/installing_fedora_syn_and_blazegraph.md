@@ -8,7 +8,9 @@
 
 ## Fedora 6
 
-### Stop Tomcat
+### Stop the Tomcat Service
+
+We're going to stop the Tomcat service while working on setting up Fedora to prevent any autodeploy misconfigurations.
 
 ```bash
 sudo systemctl stop tomcat
