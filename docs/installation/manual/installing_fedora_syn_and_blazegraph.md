@@ -291,7 +291,7 @@ As before, start the Tomcat service to get Fedora up and running.
 sudo systemctl start tomcat
 ```
 
-**Note: **sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.
+**Note:** sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.
 
 ## Syn
 
@@ -358,9 +358,9 @@ Finally, restart tomcat to apply the new configurations.
 sudo systemctl restart tomcat
 ```
 
-**Note: **sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.
+**Note:** sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.
 
-**Note: **after installing the Syn valve, you'll no longer be able to manually manage objects via Fedora Web UI or access the Fedora home page (http://localhost:8080/fcrepo). All communication with Fedora will now be handled from the Islandora module in Drupal.
+**Note:** after installing the Syn valve, you'll no longer be able to manually manage objects via Fedora Web UI or access the Fedora home page (http://localhost:8080/fcrepo). All communication with Fedora will now be handled from the Islandora module in Drupal.
 
 ## Blazegraph 2
 
