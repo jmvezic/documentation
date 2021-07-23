@@ -21,6 +21,8 @@ sudo apt-get update
 sudo apt-get -y install imagemagick tesseract-ocr ffmpeg poppler-utils
 ```
 
+**NOTICE:** If you get the `sudo: apt-add-repository: command not found`, run `sudo apt-get install software-properties-common` in order to make the command available.
+
 ### Cloning and Installing Crayfish
 
 We’re going to clone Crayfish to `/opt`, and individually run `composer install` against each of the microservice subdirectories.
