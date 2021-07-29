@@ -31,7 +31,7 @@ sudo UNTARRED_SOLR_FOLDER/bin/install_solr_service.sh SOLR_TARBALL
 ```
 - `UNTARRED_SOLR_FOLDER`: This will likely simply be `solr-VERSION`, where `VERSION` is the version number that was downloaded.
 
-The port that Solr runs on can potentially be configured at ths point, but we'll expect it to be running on `8983`.
+The port that Solr runs on can potentially be configured at this point, but we'll expect it to be running on `8983`.
 
 Wait until the command output reaches:
 
