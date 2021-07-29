@@ -15,6 +15,7 @@ The Solr binaries can be found at the [Solr downloads page](https://solr.apache.
 # information, the Solr installer is a bit particular in that it expects a .tgz
 # file with the same name as the extracted folder it contains. It's odd, and we
 # can't really get around it.
+cd
 wget SOLR_DOWNLOAD_LINK
 tar -xzvf SOLR_TARBALL
 ```
