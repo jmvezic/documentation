@@ -94,6 +94,16 @@ sudo -u www-data composer require drupal/search_api_solr:^4.2
 drush -y en search_api_solr
 ```
 
+You should see an output similar to this:
+```
+The following module(s) will be enabled: search_api_solr, language, search_api
+
+ // Do you want to continue?: yes.
+
+ [success] Successfully enabled: search_api_solr, language, search_api
+
+```
+
 ### Configuring search_api_solr
 
 Before we can create configurations to use with Solr, the core we created earlier needs to be referenced in Drupal.
