@@ -51,13 +51,11 @@ Solr's installation guide recommends that you increase the open file limit so th
 
 `/etc/sysctl.conf`
 
-**Before**:
-> 77 | #fs.protected_symlinks=0
+Add the following line to the end of the file:
 
-**After**:
-> 77 | #fs.protected_symlinks=0
-
-> 78 | fs.file-max = 65535
+```
+fs.file-max = 65535
+```
 
 Then apply your new configuration.
 
