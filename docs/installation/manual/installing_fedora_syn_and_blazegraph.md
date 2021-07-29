@@ -479,10 +479,12 @@ In order to enable our configuration when Tomcat starts, we need to reference th
 `/opt/tomcat/bin/setenv.sh`
 
 **Before**:
-> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -server -Xmx1500m -Xms1000m"
+> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -server -Xmx1500m -Xms1000m"
+
 
 **After**:
-> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.modeshape.configuration=file:///opt/fcrepo/config/repository.json -Dfcrepo.home=/opt/fcrepo/data -Dfcrepo.spring.configuration=file:///opt/fcrepo/config/fcrepo-config.xml -Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/blazegraph/conf/RWStore.properties -Dlog4j.configuration=file:/opt/blazegraph/conf/log4j.properties -server -Xmx1500m -Xms1000m"
+> 3 | export JAVA_OPTS="-Djava.awt.headless=true -Dfcrepo.home=/otp/fcrepo/data -Dfcrepo.velocity.runtime.log=/opt/tomcat/logs/velocity.log -Dfcrepo.jms.baseUrl=http://localhost:8080/fcrepo/rest -Dfcrepo.autoversioning.enabled=false -DconnectionTimeout=-1 -Dfcrepo.db.url=jdbc:postgresql://localhost:5432/fcrepo -Dfcrepo.db.user=fedora -Dfcrepo.db.password=fedora -Dcom.bigdata.rdf.sail.webapp.ConfigParams.propertyFile=/opt/blazegraph/conf/RWStore.properties -Dlog4j.configuration=file:/opt/blazegraph/conf/log4j.properties -server -Xmx1500m -Xms1000m"
+
 
 ### Restarting Tomcat
 
