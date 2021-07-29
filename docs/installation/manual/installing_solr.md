@@ -8,7 +8,7 @@
 
 ### Downloading and Placing Solr
 
-The Solr binaries can be found at the [Solr downloads page](https://lucene.apache.org/solr/downloads.html); the most recent stable release of Solr 8 should be used.
+The Solr binaries can be found at the [Solr downloads page](https://solr.apache.org/downloads.html); the most recent stable release of Solr 8 should be used.
 
 ```bash
 # While generally we download tarballs as .tar.gz files without version
