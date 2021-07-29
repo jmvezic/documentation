@@ -119,10 +119,10 @@ Creating these files from scratch is *not* recommended; rather, we’re going to
 
 ```bash
 sudo mkdir /opt/cantaloupe_config
-sudo cp CANTALOUPE_DIR/cantaloupe.properties.sample /opt/cantaloupe_config/cantaloupe.properties
-sudo cp CANTALOUPE_DIR/delegates.rb.sample /opt/cantaloupe_config/delegates.rb
+sudo cp CANTALOUPE_VER/cantaloupe.properties.sample /opt/cantaloupe_config/cantaloupe.properties
+sudo cp CANTALOUPE_VER/delegates.rb.sample /opt/cantaloupe_config/delegates.rb
 ```
-- `CANTALOUPE_DIR`: This will depend on the exact version of Cantaloupe downloaded; in the above example release, this would be `cantaloupe-5.0.3`
+- `CANTALOUPE_VER`: This will depend on the exact version of Cantaloupe downloaded; in the above example release, this would be `cantaloupe-5.0.3`
 
 The out-of-the-box configuration will work fine for our purposes, but it’s highly recommended that you take a look through the `cantaloupe.properties` and see what changes can be made; specifically, logging to actual logfiles isn’t set up by default, so you may want to take a peek at the `log.application.SyslogAppender` or `log.application.RollingFileAppender`, as well as changing the logging level.
 
@@ -136,12 +136,13 @@ Since it is a standalone application, we can configure Cantaloupe as a systemd s
 Description=Cantaloupe
 
 [Service]
-ExecStart=java -cp /opt/cantaloupe-5.0.3/cantaloupe-5.0.3.jar -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Xmx1500m -Xms1000m edu.illinois.library.cantaloupe.StandaloneEntry
+ExecStart=java -cp /opt/CANTALOUPE_VER/CANTALOUPE_VER.jar -Dcantaloupe.config=/opt/cantaloupe_config/cantaloupe.properties -Xmx1500m -Xms1000m edu.illinois.library.cantaloupe.StandaloneEntry
 SyslogIdentifier=cantaloupe
 
 [Install]
 WantedBy=multi-user.target
 ```
+- `CANTALOUPE_VER`: This will depend on the exact version of Cantaloupe downloaded; in the above example release, this would be `cantaloupe-5.0.3`
 
 We can now enable the service and run it:
 
