@@ -293,6 +293,8 @@ sudo systemctl start tomcat
 
 **Note:** sometimes it takes a while for Fedora and Tomcat to start up, usually it shouldn't take longer than 5 minutes.
 
+Once it starts up, Fedora REST API should be available at http://localhost:8080/fcrepo/rest. The username is fedoraAdmin and we defined the password before as `FEDORA_ADMIN_PASSWORD` (default: "islandora").
+
 ## Syn
 
 ### Downloading the Syn JAR File
