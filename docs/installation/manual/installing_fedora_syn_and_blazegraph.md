@@ -452,7 +452,7 @@ com.bigdata.journal.Journal.collectPlatformStatistics=false
 
 `/opt/blazegraph/conf/blazegraph.properties | tomcat:tomcat/644`
 ```
-com.bigdata.rdf.store.AbstractTripleStore.textIndex=false                                                                                         
+com.bigdata.rdf.store.AbstractTripleStore.textIndex=false
 com.bigdata.rdf.store.AbstractTripleStore.axiomsClass=com.bigdata.rdf.axioms.OwlAxioms
 com.bigdata.rdf.sail.isolatableIndices=false
 com.bigdata.rdf.store.AbstractTripleStore.justify=true
