@@ -42,6 +42,8 @@ systemd[1]: Started LSB: Controls Apache Solr as a Service.
 
 After which you can press `q` to quit the output (this won't kill Solr so it's safe).
 
+You can check if Solr is running correctly by going to http://localhost:8983/solr
+
 
 ### Increasing the Open File Limit (Optional)
 
