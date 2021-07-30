@@ -49,17 +49,27 @@ sudo usermod -a -G `whoami` www-data
 sudo su `whoami`
 ```
 
-## PHP 7.3
+## PHP 7.4
 
-### Install PHP 7.3
+### Install PHP 7.4
 
-PHP can generally be easily installed using your operating system’s package manager, though whether or not the version you’ll be given is up to date depends entirely on whether or not that package manager is kept up-to-date. We’re going to enable both PHP 7.3, as well as the myriad modules we require, simultaneously:
+Islandora defaults, a module which will install Islandora at the end, requires PHP 7.4. If you're running Debian 11 you should be able to install PHP 7.4 from the apt packages directly:
 
 ```bash
-sudo apt-get -y install php7.3 php7.3-cli php7.3-common php7.3-curl php7.3-dev php7.3-gd php7.3-imap php7.3-json php7.3-mbstring php7.3-opcache php7.3-xml php7.3-yaml php7.3-zip libapache2-mod-php7.3 php-pgsql php-redis php-xdebug unzip
+sudo apt-get -y install php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-dev php7.4-gd php7.4-imap php7.4-json php7.4-mbstring php7.4-opcache php7.4-xml php7.4-yaml php7.4-zip libapache2-mod-php7.4 php-pgsql php-redis php-xdebug unzip
 ```
 
-This will install a series of PHP configurations and mods in `/etc/php/7.3`, including:
+If you're running Debian 10, the repository for the PHP 7.4 packages needs to be installed first:
+
+```bash
+sudo apt-get -y install lsb-release apt-transport-https ca-certificates
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt-get update
+sudo apt-get -y install php7.4 php7.4-cli php7.4-common php7.4-curl php7.4-dev php7.4-gd php7.4-imap php7.4-json php7.4-mbstring php7.4-opcache php7.4-xml php7.4-yaml php7.4-zip libapache2-mod-php7.4 php-pgsql php-redis php-xdebug unzip
+```
+
+This will install a series of PHP configurations and mods in `/etc/php/7.4`, including:
 
 - A `mods-available` folder (from which everything is typically enabled by default)
 - A configuration for PHP when run from Apache in the `apache2` folder
