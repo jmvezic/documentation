@@ -213,7 +213,6 @@ media.stream=activemq:queue:islandora-indexing-fcrepo-media
 file.stream=activemq:queue:islandora-indexing-fcrepo-file
 file.delete.stream=activemq:queue:islandora-indexing-fcrepo-file-delete
 milliner.baseUrl=http://localhost/milliner
-gemini.baseUrl=http://localhost/gemini
 ```
 
 ### Blueprinting Karaf Derivative Connectors
