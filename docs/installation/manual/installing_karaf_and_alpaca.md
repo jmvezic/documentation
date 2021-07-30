@@ -24,6 +24,14 @@ This will give us:
 - An `activemq` service that will be run on boot
 - A user, `activemq`, who will be in charge of the ActiveMQ service
 
+Take note of the version of ActiveMQ we're going to be installing. It needs to match a Karaf blueprint we'll create later. Check the version with
+
+```bash
+sudo apt-cache policy activemq
+```
+
+Write down the version listed under `Installed: `.
+
 ## Karaf 4
 
 ## Creating a Karaf User
@@ -174,7 +182,7 @@ For the Karaf features we’re going to install, we need a few different reposit
 # upstream dependency for some fcrepo features.
 /opt/karaf/bin/client repo-add mvn:org.apache.jena/jena-osgi-features/JENA_OSGI_VERSION/xml/features
 ```
-- `ACTIVEMQ_KARAF_VERSION`: The latest version of ActiveMQ Karaf 5.x.x; you can find this listed at the [activemq-karaf repository page](https://mvnrepository.com/artifact/org.apache.activemq/activemq-karaf) (e.g., 5.16.2 at the time of writing)
+- `ACTIVEMQ_KARAF_VERSION`: The version of ActiveMQ we wrote down at the beginning of this chapter when installing ActiveMQ via `apt-get`
 - `APACHE_CAMEL_VERSION`: The latest version of Apache Camel 2.x.x; you can find this listed at the [apache-camel repository page](https://mvnrepository.com/artifact/org.apache.camel.karaf/apache-camel) (e.g., 3.11.0 at the time of writing)
 - `ISLANDORA_KARAF_VERSION`: The latest version of Islandora Karaf 1.x; you can find this listed at the [islandora-karaf repository page](https://mvnrepository.com/artifact/ca.islandora.alpaca/islandora-karaf) (e.g., 1.0.5 at the time of writing)
 - `JENA_OSGI_VERSION`: The latest version of the Apache Jena OSGi features; you can find this listed at the [jena-osgi-features repository page](https://mvnrepository.com/artifact/org.apache.jena/jena-osgi-features) (e.g., 4.1.0 at the time of writing)
