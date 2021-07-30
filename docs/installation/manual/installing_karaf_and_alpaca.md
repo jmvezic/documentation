@@ -147,6 +147,14 @@ sudo systemctl enable /opt/karaf/bin/karaf.service
 sudo systemctl start karaf
 ```
 
+We can check if the service started correctly with:
+
+```bash
+sudo systemctl status karaf
+```
+
+Press Q to close the status.
+
 ## Alpaca 1.0.x
 
 ### Adding the Required Karaf Repositories
