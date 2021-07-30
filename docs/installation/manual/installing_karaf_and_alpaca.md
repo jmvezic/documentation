@@ -107,7 +107,7 @@ Similar to Tomcat, our Karaf service is going to rely on a `setenv` shell script
 #!/bin/sh
 export JAVA_HOME="PATH_TO_JAVA_HOME"
 ```
-- `PATH_TO_JAVA_HOME`: This will be the same `JAVA_HOME` we used when installing Tomcat , and can be found using the same method (i.e., still `/usr/lib/jvm/java-8-openjdk-amd64` if that's what it was before).
+- `PATH_TO_JAVA_HOME`: This will be the same `JAVA_HOME` we used when installing Tomcat , and can be found using the same method (i.e., still `/usr/lib/jvm/java-11-openjdk-amd64` if that's what it was before).
 
 ### Initializing Karaf
 
