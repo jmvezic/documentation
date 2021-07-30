@@ -113,6 +113,20 @@ export JAVA_HOME="PATH_TO_JAVA_HOME"
 
 We’re going to start Karaf, then run the installer to put our configurations in place and generate a Karaf service. Once these are installed, we’re going to stop Karaf, as from there on out its start/stop management should be handled via that service.
 
+First we need to enable the default Karaf user in `/opt/karaf/etc/users.properties`:
+
+**Before**:
+> 32 | # karaf = karaf,\_g\_:admingroup
+
+> 33 | # \_g\_\\:admingroup = group,admin,manager,viewer,systembundles,ssh
+
+**After**:
+> 32 | karaf = karaf,\_g\_:admingroup
+
+> 33 | \_g\_\\:admingroup = group,admin,manager,viewer,systembundles,ssh
+
+Save the file and close it, then:
+
 ```bash
 sudo -u karaf /opt/karaf/bin/start
 # You may want to wait a bit for Karaf to start.
