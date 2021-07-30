@@ -21,6 +21,7 @@ The below configuration will establish `localhost` as a trusted host pattern, bu
 > 790 | );
 
 **After**:
+```
 'driver' => 'pgsql',
 );
 
@@ -36,6 +37,7 @@ $settings['flysystem'] = [
  ],
 ],
 ];
+```
 
 Once this is done, refresh the cache to take hold of the new settings.
 
