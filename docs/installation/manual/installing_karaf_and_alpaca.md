@@ -169,14 +169,15 @@ For the Karaf features we’re going to install, we need a few different reposit
 ```bash
 /opt/karaf/bin/client repo-add mvn:org.apache.activemq/activemq-karaf/ACTIVEMQ_KARAF_VERSION/xml/features
 /opt/karaf/bin/client repo-add mvn:org.apache.camel.karaf/apache-camel/APACHE_CAMEL_VERSION/xml/features
-/opt/karaf/bin/client repo-add mvn:ca.islandora.alpaca/islandora-karaf/LATEST/xml/features
+/opt/karaf/bin/client repo-add mvn:ca.islandora.alpaca/islandora-karaf/ISLANDORA_KARAF_VERSION/xml/features
 # XXX: This shouldn't be strictly necessary, but appears to be a missing
 # upstream dependency for some fcrepo features.
 /opt/karaf/bin/client repo-add mvn:org.apache.jena/jena-osgi-features/JENA_OSGI_VERSION/xml/features
 ```
-- `ACTIVEMQ_KARAF_VERSION`: The latest version of ActiveMQ Karaf 5.x.x; you can find this listed at the [activemq-karaf repository page](https://mvnrepository.com/artifact/org.apache.activemq/activemq-karaf) (e.g., 5.15.11 at the time of writing)
-- `APACHE_CAMEL_VERSION`: The latest version of Apache Camel 2.x.x; you can find this listed at the [apache-camel repository page](https://mvnrepository.com/artifact/org.apache.camel.karaf/apache-camel) (e.g., 2.25.0 at the time of writing)
-- `JENA_OSGI_VERSION`: The latest version of the Apache Jena OSGi features; you can find this listed at the [jena-osgi-features repository page](https://mvnrepository.com/artifact/org.apache.jena/jena-osgi-features) (e.g., 3.14.0 at the time of writing)
+- `ACTIVEMQ_KARAF_VERSION`: The latest version of ActiveMQ Karaf 5.x.x; you can find this listed at the [activemq-karaf repository page](https://mvnrepository.com/artifact/org.apache.activemq/activemq-karaf) (e.g., 5.16.2 at the time of writing)
+- `APACHE_CAMEL_VERSION`: The latest version of Apache Camel 2.x.x; you can find this listed at the [apache-camel repository page](https://mvnrepository.com/artifact/org.apache.camel.karaf/apache-camel) (e.g., 3.11.0 at the time of writing)
+- `ISLANDORA_KARAF_VERSION`: The latest version of Islandora Karaf 1.x; you can find this listed at the [islandora-karaf repository page](https://mvnrepository.com/artifact/ca.islandora.alpaca/islandora-karaf) (e.g., 1.0.5 at the time of writing)
+- `JENA_OSGI_VERSION`: The latest version of the Apache Jena OSGi features; you can find this listed at the [jena-osgi-features repository page](https://mvnrepository.com/artifact/org.apache.jena/jena-osgi-features) (e.g., 4.1.0 at the time of writing)
 
 ### Configuring Karaf Features
 
