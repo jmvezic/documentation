@@ -140,7 +140,7 @@ sudo -u karaf /opt/karaf/bin/start
 
 ### Creating and Starting the Karaf Service
 
-Installing the Karaf wrapper generates several service files that can be used on different types of systems. For this example installation on an Ubuntu 18.04 machine, we want to enable the `karaf.service` service so that Karaf is properly started on boot.
+Installing the Karaf wrapper generates several service files that can be used on different types of systems. For Debian and Ubuntu installation we want to enable the `karaf.service` service so that Karaf is properly started on boot.
 
 ```bash
 sudo systemctl enable /opt/karaf/bin/karaf.service
