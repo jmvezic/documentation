@@ -365,12 +365,6 @@ Before we can configure the features we’re going to use, they need to be insta
 # we're using, but is being included here to resolve the aforementioned
 # missing link in the dependency chain.
 /opt/karaf/bin/client feature:install jena
-/opt/karaf/bin/client feature:install fcrepo-camel
-/opt/karaf/bin/client feature:install fcrepo-indexing-triplestore
-/opt/karaf/bin/client feature:install islandora-http-client
-/opt/karaf/bin/client feature:install islandora-indexing-triplestore
-/opt/karaf/bin/client feature:install islandora-indexing-fcrepo
-/opt/karaf/bin/client feature:install islandora-connector-derivative
 ```
 
 ### Verifying Karaf Components are Running (Optional But Recommended)
